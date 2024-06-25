@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweet Input Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Compose Tweet</h1>
+        <form action="/" method="post">
+            <textarea name="input_text" placeholder="What's happening?" maxlength="280" required></textarea>
+            <div class="tweet-actions">
+                <button type="submit">Tweet</button>
+            </div>
+        </form>
+        {% if output %}
+        <div class="output">
+            <h2>Output</h2>
+            <p>{{ output }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
